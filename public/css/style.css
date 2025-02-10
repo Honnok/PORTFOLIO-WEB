@@ -148,10 +148,10 @@ header.scrolled {
     justify-content: center;
     gap: 5px;
 }
-.barconthtml {
+.barconthtml, .barcontcss, .barcontc {
     width: 50px;
     height: 200px;
-    background: linear-gradient(to top, #ff00bf 70%, rgb(219, 212, 212) 30%);
+    background-color: #d6ced3;
     -webkit-box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
     box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);   
@@ -159,34 +159,23 @@ header.scrolled {
     border-radius: 5px;
     overflow: hidden;
 }
-.barcontcss {
-    width: 50px;
-    height: 200px;
-    background: linear-gradient(to top, #ff6ada96 70%, rgb(219, 212, 212) 30%);
-    -webkit-box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
-    box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
+.barfillc, .barfillcss, .barfillhtml {
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    animation: fillBar1 2s ease-out forwards;
 }
-.barcontc {
-    width: 50px;
-    height: 200px;
-    background-color: rgb(219, 212, 212);
-    -webkit-box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
-    box-shadow: 0px 8px 5px -2px rgba(0,0,0,0.5);
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    animation: fillBar1 linear;
+.barfillhtml {
+    background: linear-gradient(to top, #772262 100%, transparent 0%);
 }
-@keyframes fillBar1 {
-    0% {
-    }
-    100% {
-    }
+
+.barfillcss {
+    background: linear-gradient(to top, #ee34c996 40%, transparent 0%);
+}
+
+.barfillc {
+    background: linear-gradient(to top, #fa28b4 35%, transparent 0%);
 }
 .bar {
     background-color: transparent;
@@ -199,25 +188,7 @@ header.scrolled {
 .trait {
     background-color: red;
 }
-.verthtml {
-    background: linear-gradient(to right, #ff00bf, #b005ff); /* Dégradé */
-    -webkit-background-clip: text; /* Applique le dégradé au texte */
-    -webkit-text-fill-color: transparent;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: small;
-    background-color: transparent;
-}
-.vertcss {
-    background: linear-gradient(to right, #ff00bf, #b005ff); /* Dégradé */
-    -webkit-background-clip: text; /* Applique le dégradé au texte */
-    -webkit-text-fill-color: transparent;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: small;
-    background-color: transparent;
-}
-.vertc {
+.verthtml, .vertcss, .vertc {
     background: linear-gradient(to right, #ff00bf, #b005ff); /* Dégradé */
     -webkit-background-clip: text; /* Applique le dégradé au texte */
     -webkit-text-fill-color: transparent;
