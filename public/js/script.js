@@ -1,14 +1,4 @@
-const header = document.getElementById("header");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
             // Fonction pour animer une barre et son pourcentage
             function animateBar(barFillClass, percentageElement, targetHeight, delay) {
                 gsap.fromTo(
@@ -32,16 +22,14 @@ const header = document.getElementById("header");
                 );
             }
         
-            // Animation pour la barre Web Design (100%)
-            animateBar(".barfillhtml", document.querySelector(".bar:nth-child(1) .percentage"), "100%", 0);
+            
+            animateBar(".barfillhtml", document.querySelector(".bar:nth-child(1) .percentage"), "90%", 0);
+            
+            animateBar(".barfillcss", document.querySelector(".bar:nth-child(2) .percentage"), "25%", 0.5);
         
-            // Animation pour la barre Python (40%)
-            animateBar(".barfillcss", document.querySelector(".bar:nth-child(2) .percentage"), "40%", 0.5);
-        
-            // Animation pour la barre C# (35%)
-            animateBar(".barfillc", document.querySelector(".bar:nth-child(3) .percentage"), "35%", 1);
+            animateBar(".barfillc", document.querySelector(".bar:nth-child(3) .percentage"), "43%", 1);
         });
-        
+
 const neonLine = document.getElementById("neon-line");
 
 window.addEventListener("scroll", () => {
@@ -49,5 +37,70 @@ window.addEventListener("scroll", () => {
         neonLine.style.opacity = "1"; // Affiche la ligne de néon
     } else {
         neonLine.style.opacity = "0"; // Masque la ligne de néon
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const neonLine = document.getElementById("neon-line");
+    const ctpSection = document.querySelector(".ctp");
+    const pieChartCanvas = document.getElementById("pieChart");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            neonLine.style.opacity = "1";
+        } else {
+            neonLine.style.opacity = "0";
+        }
+
+        // Vérifiez si la section ctp est dans la vue
+        const ctpPosition = ctpSection.getBoundingClientRect();
+        if (ctpPosition.top < window.innerHeight && ctpPosition.bottom >= 0) {
+            animateCtpSection();
+        }
+    });
+
+    function animateCtpSection() {
+        // Animation du slide avec GSAP
+        gsap.to("#pieChart", {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+            onComplete: () => {
+                createPieChart();
+            }
+        });
+    }
+
+    function createPieChart() {
+        const ctx = pieChartCanvas.getContext("2d");
+        const pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['HTML', 'CSS', 'JavaScript'],
+                datasets: [{
+                    label: 'Compétences',
+                    data: [20, 50, 30],
+                    backgroundColor: [
+                        '#FFFFFF',
+                        '#00FFFF',
+                        '#FF1493',
+                    ],
+                    borderColor: [
+                        'rgb(0, 0, 0)',
+                        'rgb(0, 0, 0)',
+                        'rgb(0, 0, 0)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
     }
 });

@@ -151,7 +151,7 @@ header {
 }
 .bartr {
     display: flex;
-    justify-content: center;
+    justify-content: ;
     background-color: transparent;
     gap: 5px;
     margin-top: 20px;
