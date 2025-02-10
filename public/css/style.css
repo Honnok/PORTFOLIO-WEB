@@ -21,6 +21,7 @@ body,html {
 }
 header {
     position: fixed;
+    background-color: black !important;
     width: 100%;
     height: 60px;
     display: flex;
@@ -30,8 +31,21 @@ header {
     padding-top: 20px;
     z-index: 1000;
 }
-header.scrolled {
-    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.2);
+#neon-line {
+    position: fixed; /* Fixe la ligne en haut de la page */
+    top: 80px; /* Ajustez en fonction de la hauteur de votre header */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: #ff00bf; /* Couleur de base */
+    box-shadow: 
+        0 0 5px #ff00bf, 
+        0 0 10px #b005ff, 
+        0 0 20px #ff00bf, 
+        0 0 40px #b005ff; /* Effet néon */
+    opacity: 0; /* La ligne est invisible par défaut */
+    transition: opacity 0.3s ease-in-out; /* Animation douce */
+    z-index: 999; /* Assurez-vous que la ligne est au-dessus du contenu */
 }
 .logoh {
     display: flex;

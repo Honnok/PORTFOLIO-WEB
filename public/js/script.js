@@ -41,3 +41,13 @@ const header = document.getElementById("header");
             // Animation pour la barre C# (35%)
             animateBar(".barfillc", document.querySelector(".bar:nth-child(3) .percentage"), "35%", 1);
         });
+        
+const neonLine = document.getElementById("neon-line");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) { // Ajustez la valeur pour déclencher l'effet
+        neonLine.style.opacity = "1"; // Affiche la ligne de néon
+    } else {
+        neonLine.style.opacity = "0"; // Masque la ligne de néon
+    }
+});
