@@ -77,3 +77,15 @@ header {
     transition: opacity 0.3s ease-in-out;
     z-index: 999;
 }
+.competences {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+}
+.cmpt {
+    color: white;
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+}

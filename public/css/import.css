@@ -1,2 +1,6 @@
+/* FONT */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+/* Liens CSS */
+@import url(/public/css/logo_slider.css);
+@import url(/public/css/animation.css);
+@import url(/public/css/style.css);

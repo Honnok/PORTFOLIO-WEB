@@ -1,0 +1,56 @@
+/* Logo Slider */
+.logo-slider {
+    background: rgb(0, 0, 0);
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    fill: white;
+  }
+  
+  .logo-slider::before,
+  .logo-slider::after {
+    background: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100%; /* Ajustez la hauteur en fonction de la hauteur du slider */
+    position: absolute;
+    width: 10%; /* Largeur du dégradé */
+    z-index: 2;
+  }
+  
+  .logo-slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+  
+  .logo-slider::before {
+    left: 0;
+    top: 0;
+  }
+  
+  .logo-slider .logo-slide-track {
+    animation: logo-scroll 10s linear infinite; /* Ajustez la durée si nécessaire */
+    display: flex;
+    width: calc(20% * 10); /* 10 logos, chacun prenant 20% de la largeur */
+  }
+  
+  .logo-slider .slide {
+    flex: 0 0 20%; /* Chaque logo prend 20% de la largeur du conteneur */
+    padding: 20px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+  }
+  
+  .logo-slider .slide img {
+    width: 100%; /* Les images s'adaptent à la largeur du slide */
+    height: auto; /* Maintient le ratio de l'image */
+  }
+  
+  @keyframes logo-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-20% * 5)); /* Défilement de 5 logos */
+    }
+  }
